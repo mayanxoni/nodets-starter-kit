@@ -1,0 +1,88 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2020": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "ignorePatterns": [
+        //"test.js",
+        "tests/*.js"
+    ],
+    "rules": {
+        "import/extensions": [
+            "off",
+            "always",
+            {
+                "ts": "never",
+                "tsx": "never",
+                "js": "never",
+                "jsx": "never"
+            }
+        ],
+        "brace-style": [
+            "error",
+            "stroustrup"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "no-unused-vars": [
+            "off"
+        ],
+        "no-var": [
+            "error"
+        ],
+        "one-var": [
+            "error"
+        ],
+        "no-tabs": [
+            "off"
+        ],
+        "indent": [
+            "error",
+            "tab",
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "no-console": [
+            "off"
+        ],
+        "import/no-unresolved": [
+            "off"
+        ],
+		"import/prefer-default-export": "off",
+        "no-param-reassign": "off",
+        "no-underscore-dangle": [
+            "error",
+            {
+                "allow": [
+                    "_id",
+					"__v"
+                ]
+            }
+        ],
+        "no-continue": [
+            "off"
+        ],
+        "no-plusplus": [
+            "off"
+        ],
+        "max-len": [
+            2,
+            140,
+            4
+        ]
+    }
+}
