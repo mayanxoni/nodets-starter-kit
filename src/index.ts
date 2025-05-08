@@ -59,10 +59,9 @@ process.on('SIGTERM', () => {
 	if (server) {
 		server.close(() => {
 			if (logger) logger.info('Process terminated!');
-			mongoose.connection.close(false, () => {
-				if (logger) logger.info('MongoDB connection closed.');
-				process.exit(0);
-			});
+			mongoose.connection.close();
+			if (logger) logger.info('MongoDB connection closed.');
+			process.exit(0);
 		});
 	}
 	else {

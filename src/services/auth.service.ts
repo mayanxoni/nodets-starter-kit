@@ -31,7 +31,7 @@ export const logout = async (refreshToken: string) => {
 			message: 'Refresh token not found'
 		};
 	}
-	await refreshTokenDoc.remove();
+	await refreshTokenDoc.deleteOne();
 	return {
 		code: responseManager.SUCCESS.code,
 		message: 'Logged out'
@@ -48,7 +48,7 @@ export const refreshAuth = async (refreshToken: string) => {
 				message: 'User not found'
 			};
 		}
-		await refreshTokenDoc.remove();
+		await refreshTokenDoc.deleteOne();
 		const tokens = await tokenService.generateAuthTokens(user);
 		return {
 			code: responseManager.SUCCESS.code,
